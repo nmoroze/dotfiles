@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+
+# Clean dead symbolic links in ~/ only if they point to THIS directory 
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: '' # link ~/.dotfiles to this dir
+    ~/.vimrc: vimrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
