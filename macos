@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Close system preferences to keep it from overriding stuff
+osascript -e 'tell application "System Preferences" to quit'
+
+# Enable key repeats
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Max out keyboard repeat rate
+defaults write -g KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 15
+
+# Set screenshot directory
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
+
+# Pin dock to left
+defaults write com.apple.dock orientation -string left
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Hide recent apps
+defaults write com.apple.dock show-recents -bool false
+
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 41
+
+# Set clock format
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
+
