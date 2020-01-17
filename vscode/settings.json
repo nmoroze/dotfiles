@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.fontFamily": "Roboto Mono for Powerline",
+    "editor.rulers": [
+        80
+    ],
+    "python.linting.pylintEnabled": false,
+    "breadcrumbs.enabled": true,
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0,
+    "prettier.proseWrap": "never",
+    "editor.renderWhitespace": "all"
+}

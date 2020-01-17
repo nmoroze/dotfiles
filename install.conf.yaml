@@ -10,7 +10,14 @@
     ~/.dotfiles: ''  # link ~/.dotfiles to this dir
     ~/.gitconfig:
     ~/.gitignore_global:
+    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets: vscode/snippets
     ~/.vimrc:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  # Install VS Code extensions
+  # Generate vscode/extensions: code --list-extensions > ~/.dotfiles/vscode/extensions
+  - [xargs -n1 code --install-extension < vscode/extensions]
+
