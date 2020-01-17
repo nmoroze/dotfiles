@@ -6,9 +6,11 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.dotfiles: '' # link ~/.dotfiles to this dir
-    ~/.vimrc: vimrc
     ~/.config/omf: omf
+    ~/.dotfiles: ''  # link ~/.dotfiles to this dir
+    ~/.gitconfig:
+    ~/.gitignore_global:
+    ~/.vimrc:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

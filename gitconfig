@@ -1,0 +1,13 @@
+[alias]
+    # https://stackoverflow.com/a/7532131
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+[include]
+    # Get user settings - https://stackoverflow.com/a/42571751
+    path = ~/.gitconfig_user
+[user]
+    # User settings in ~/.gitconfig_user
+
