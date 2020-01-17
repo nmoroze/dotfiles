@@ -3,11 +3,12 @@
       relink: true
 
 # Clean dead symbolic links in ~/ only if they point to THIS directory 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - link:
     ~/.dotfiles: '' # link ~/.dotfiles to this dir
     ~/.vimrc: vimrc
+    ~/.config/omf: omf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
