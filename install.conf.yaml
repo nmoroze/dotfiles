@@ -13,6 +13,7 @@
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
     ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
     ~/Library/Application Support/Code/User/snippets: vscode/snippets
+    ~/.pylintrc:
     ~/.vimrc:
 
 - shell:

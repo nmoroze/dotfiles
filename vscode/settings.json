@@ -3,10 +3,12 @@
     "editor.rulers": [
         80
     ],
-    "python.linting.pylintEnabled": false,
+    "python.linting.pylintEnabled": true,
     "breadcrumbs.enabled": true,
     "files.trimTrailingWhitespace": true,
     "window.zoomLevel": 0,
     "prettier.proseWrap": "never",
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "python.formatting.autopep8Path": "~/.local/bin/autopep8",
+    "python.linting.pylintPath": "~/.local/bin/pylint",
 }
