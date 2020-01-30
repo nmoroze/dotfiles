@@ -11,16 +11,20 @@
     ~/.dotfiles: ''  # link ~/.dotfiles to this dir
     ~/.gitconfig:
     ~/.gitignore_global:
-    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
-    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
-    ~/Library/Application Support/Code/User/snippets: vscode/snippets
     ~/.pylintrc:
     ~/.vimrc:
+    ~/Library/Application Support/Code/User/settings.json:
+        if: ./util/ismacos.sh
+        path: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json:
+        if: ./util/ismacos.sh
+        path: vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets:
+        if: ./util/ismacos.sh
+        path: vscode/keybindings.json
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  # Install VS Code extensions
-  # Generate vscode/extensions: code --list-extensions > ~/.dotfiles/vscode/extensions
-  - [xargs -n1 code --install-extension < vscode/extensions]
-  - ./macos
-
+  - [which code && xargs -n1 code --install-extension < vscode/extensions,
+        Installing VS Code extensions]
+  - [./util/ismacos.sh && ./macos, Configuring MacOS]
