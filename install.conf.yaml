@@ -2,10 +2,11 @@
     link:
       relink: true
 
-# Clean dead symbolic links in ~/ only if they point to THIS directory 
-- clean: ['~', '~/.config']
+# Clean dead symbolic links in ~/ only if they point to THIS directory
+- clean: ['~', '~/.config', '~/.config/fish']
 
 - link:
+    ~/.config/fish/functions: fish/functions
     ~/.config/omf: omf
     ~/.dotfiles: ''  # link ~/.dotfiles to this dir
     ~/.gitconfig:
