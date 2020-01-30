@@ -1,10 +1,9 @@
 # Force pylint to respect currently activated virtualenv
 # https://pypi.org/project/pylint-venv/
-# Setup: 
-# - pipx install pylint 
-# - pipx inject pylint pylint_venv       
+# Setup:
+# - pipx install pylint
+# - pipx inject pylint pylint_venv
 init-hook=
     try: import pylint_venv
     except ImportError: pass
     else: pylint_venv.inithook()
-
