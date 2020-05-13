@@ -11,4 +11,11 @@
     "editor.renderWhitespace": "all",
     "python.formatting.autopep8Path": "~/.local/bin/autopep8",
     "python.linting.pylintPath": "~/.local/bin/pylint",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[markdown]":{
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
+    },
+    "rewrap.autoWrap.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "never",
 }
