@@ -62,7 +62,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(smartparens)
+   dotspacemacs-excluded-packages '(smartparens fill-column-indicator)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -313,6 +313,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; get rid of gap when maximizing window
+  (setq frame-resize-pixelwise t)
+
   ;; this probably has something to do with line-wrapping in the emacs terminal,
   ;; but I don't remember why I added it tbh
   (add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
@@ -321,9 +325,8 @@ you should place your code here."
   (setq vc-follow-symlinks t)
 
   ;; set up ruler
-  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
-  (add-hook 'text-mode-hook 'turn-on-fci-mode)
-  (setq fci-rule-color "#666666")
+  (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+  (add-hook 'text-mode-hook 'display-fill-column-indicator-mode)
 
   ;; https://www.reddit.com/r/spacemacs/comments/6p3w0l/making_q_not_kill_emacs/dkn7ax6/
   ;; :q should kill the current buffer rather than quitting emacs entirely
