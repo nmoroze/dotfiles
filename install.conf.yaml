@@ -23,6 +23,10 @@
     ~/Library/Application Support/Code/User/snippets:
         if: ./util/ismacos.sh
         path: vscode/keybindings.json
+    ~/Library/Application Support/iTerm2/Scripts/Autolaunch/cmd-timer.py:
+        create: true
+        if: ./util/ismacos.sh
+        path: cmd-timer.py
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
