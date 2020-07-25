@@ -22,6 +22,6 @@ set mouse=a
 " Remove trailing whitespace on save https://stackoverflow.com/a/356130
 autocmd BufWritePre * :%s/\s\+$//e
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 

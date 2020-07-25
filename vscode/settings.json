@@ -16,6 +16,11 @@
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
     },
-    "rewrap.autoWrap.enabled": true,
     "latex-workshop.latex.autoBuild.run": "never",
+    "bracket-pair-colorizer-2.excludedLanguages": [
+        "json",
+        "verilog"
+    ],
+    "python.pythonPath": "/usr/local/bin/python3",
+
 }
