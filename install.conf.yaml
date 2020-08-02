@@ -9,6 +9,8 @@
     ~/.config/fish/functions: fish/functions
     ~/.config/omf: omf
     ~/.dotfiles: ''  # link ~/.dotfiles to this dir
+    ~/.gdbinit:
+       if: ./util/ismacos.sh
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.pylintrc:
