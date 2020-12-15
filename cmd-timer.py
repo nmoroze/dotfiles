@@ -61,7 +61,11 @@ async def main(connection):
 
     @iterm2.StatusBarRPC
     async def generic_command_coroutine(knobs, pid=iterm2.Reference("jobPid")):
-        out = subprocess.check_output(["ps", "-o", "etime=", "-p", str(pid)])
+        try:
+            out = subprocess.check_output(["ps", "-o", "etime=", "-p", str(pid)])
+        except subprocess.CalledProcessError:
+            return "Running time: --"
+
         out = out.decode('utf-8').strip()
 
         re_days_hrs_mins_secs = re.compile(r"(\d*)-(\d*):(\d*):(\d*)")
