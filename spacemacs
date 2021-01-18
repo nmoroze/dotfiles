@@ -333,12 +333,6 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
   (add-hook 'text-mode-hook 'display-fill-column-indicator-mode)
 
-  ;; https://www.reddit.com/r/spacemacs/comments/6p3w0l/making_q_not_kill_emacs/dkn7ax6/
-  ;; :q should kill the current buffer rather than quitting emacs entirely
-  (evil-ex-define-cmd "q" 'kill-this-buffer)
-  ;; Need to type out :quit to close emacs
-  (evil-ex-define-cmd "quit" 'evil-quit)
-
   ;; use riscv-mode for assembly files, since the default Assembler mode is very
   ;; strange (and I pretty much just deal with RISC-V these days)
   (require 'riscv-mode)
@@ -356,6 +350,14 @@ you should place your code here."
   ;; (add-hook 'LaTeX-mode-hook (lambda ()
   ;;                              (add-hook 'before-save-hook (lambda () (LaTeX-fill-buffer nil)) nil 'make-it-local)))
 
+  (setq confirm-kill-emacs 'yes-or-no-p)
+
+  ;; fix undo
+  (global-undo-tree-mode)
+  (evil-set-undo-system 'undo-tree)
+
+  ;; FuseSoC .core files are yaml
+  (add-to-list 'auto-mode-alist '("\\.core\\'" . yaml-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
