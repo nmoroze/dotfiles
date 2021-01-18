@@ -8,5 +8,7 @@
 [include]
     # Get user settings - https://stackoverflow.com/a/42571751
     path = ~/.gitconfig_user
+[init]
+  defaultBranch = main
 [user]
     # User settings in ~/.gitconfig_user
