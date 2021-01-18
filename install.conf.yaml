@@ -35,3 +35,4 @@
   - [which code && xargs -n1 code --install-extension < vscode/extensions,
         Installing VS Code extensions]
   - [./util/ismacos.sh && ./macos, Configuring MacOS]
+  - [./util/ismacos.sh && ./iterm/setup-iterm.sh, Set up iTerm configuration]
