@@ -8,6 +8,7 @@
 - link:
     ~/.config/fish/functions: fish/functions
     ~/.config/omf: omf
+    ~/.doom.d: doom
     ~/.dotfiles: ''  # link ~/.dotfiles to this dir
     ~/.gdbinit:
        if: ./util/ismacos.sh
