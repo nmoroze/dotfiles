@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Verilog template
+# --
+
+module $1 ($2
+);
+  $0
+endmodule
