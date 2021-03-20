@@ -15,7 +15,6 @@
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.pylintrc:
-    ~/.spacemacs:
     ~/.vimrc:
     ~/Library/Application Support/Code/User/settings.json:
         if: ./util/ismacos.sh
