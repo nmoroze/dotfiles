@@ -54,14 +54,29 @@
 
 ;; Ignore default templates
 (set-file-template! "/.gitignore" :ignore t)
+(set-file-template! "\\.\py$" :ignore t) ; TODO: maybe use this if file is clearly entry point?
 
 ;; Don't open dired with find-file (https://emacs.stackexchange.com/a/33706)
-(with-eval-after-load 'counsel
+;; ivy must be used in with-eval-after-load, not counsel, otherwise there's an
+;; error due to alt being nil. If I try to wrap this with two with-eval-after-load,
+;; this still doesn't work (unless the first one waits for ivy).
+(with-eval-after-load 'ivy
   (let ((done (where-is-internal #'ivy-done     ivy-minibuffer-map t))
         (alt  (where-is-internal #'ivy-alt-done ivy-minibuffer-map t)))
-    (define-key counsel-find-file-map done #'ivy-alt-done)
-    (define-key counsel-find-file-map alt  #'ivy-done)))
+    (if (and done alt)
+        (let ()
+         (define-key counsel-find-file-map done #'ivy-alt-done)
+         (define-key counsel-find-file-map alt  #'ivy-done))
+      (message "WARNING: error modifying find-file behavior"))))
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)
+            (setq comment-auto-fill-only-comments t)))
+(add-hook 'text-mode-hook #'auto-fill-mode)
 
 (load! "+bindings.el")
+(load! "+latex.el")
+(load! "+org.el")
 (load! "+private.el")
 (load! "+verilog.el")
