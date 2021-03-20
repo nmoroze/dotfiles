@@ -20,3 +20,7 @@ set -g theme_nerd_fonts yes
 if test (uname) = Darwin
     set -g fish_function_path ~/.config/fish/functions/macos $fish_function_path
 end
+
+# enable chruby
+source /usr/local/share/chruby/chruby.fish
+source /usr/local/share/chruby/auto.fish
