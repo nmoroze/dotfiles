@@ -75,6 +75,8 @@
             (setq comment-auto-fill-only-comments t)))
 (add-hook 'text-mode-hook #'auto-fill-mode)
 
+(setq +vc-gutter-in-remote-files 't)
+
 (load! "+bindings.el")
 (load! "+latex.el")
 (load! "+org.el")
