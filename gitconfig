@@ -4,6 +4,7 @@
 [color]
 	ui = auto
 [core]
+    editor = vim
 	excludesfile = ~/.gitignore_global
 [include]
     # Get user settings - https://stackoverflow.com/a/42571751
@@ -12,3 +13,5 @@
   defaultBranch = main
 [user]
     # User settings in ~/.gitconfig_user
+[diff]
+	wsErrorHighlight = all
