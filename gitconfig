@@ -1,6 +1,7 @@
 [alias]
     # https://stackoverflow.com/a/7532131
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+    clean-branches = !git branch --merged | grep -v "^*" | xargs git branch -d
 [color]
 	ui = auto
 [core]
@@ -15,3 +16,4 @@
     # User settings in ~/.gitconfig_user
 [diff]
 	wsErrorHighlight = all
+
